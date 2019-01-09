@@ -1,0 +1,1284 @@
+--------------------------------------------------------------------------------
+Section 0 - Line up
+--------------------------------------------------------------------------------
+Player 0 (P0): E2, Alternate
+        Collude, then alternate.
+Player 1 (P1): E2, Alternate
+        Collude, then alternate.
+Player 2 (P2): E2, Alternate
+        Collude, then alternate.
+Player 3 (P3): E2, Alternate
+        Collude, then alternate.
+Player 4 (P4): E2, Alternate
+        Collude, then alternate.
+Player 5 (P5): E3, Collude but retaliate
+        Collude first round. Collude, except in a round after getting 
+        a severe punishment.
+Player 6 (P6): E3, Collude but retaliate
+        Collude first round. Collude, except in a round after getting 
+        a severe punishment.
+Player 7 (P7): E3, Collude but retaliate
+        Collude first round. Collude, except in a round after getting 
+        a severe punishment.
+Player 8 (P8): E3, Collude but retaliate
+        Collude first round. Collude, except in a round after getting 
+        a severe punishment.
+Player 9 (P9): E3, Collude but retaliate
+        Collude first round. Collude, except in a round after getting 
+        a severe punishment.
+--------------------------------------------------------------------------------
+Section 1 - Player vs. Player
+--------------------------------------------------------------------------------
+Each column shows pts/round earned against each other player:
+             P0     P1     P2     P3     P4     P5     P6     P7     P8     P9
+vs. P0 :      0   -124   -125   -125   -125   -199   -201   -201   -201   -201
+vs. P1 :   -124      0   -125   -125   -125   -199   -201   -199   -201   -199
+vs. P2 :   -125   -125      0   -125   -125   -199   -199   -199   -201   -201
+vs. P3 :   -125   -125   -125      0   -125   -199   -201   -199   -201   -201
+vs. P4 :   -125   -125   -125   -125      0   -201   -199   -201   -199   -201
+vs. P5 :   -199   -199   -199   -199   -196      0      0      0      0      0
+vs. P6 :   -196   -197   -199   -196   -199      0      0      0      0      0
+vs. P7 :   -196   -199   -199   -199   -197      0      0      0      0      0
+vs. P8 :   -197   -197   -197   -198   -199      0      0      0      0      0
+vs. P9 :   -196   -199   -197   -198   -198      0      0      0      0      0
+TOTAL  :  -1483  -1490  -1491  -1490  -1489   -997  -1001   -999  -1003  -1003
+--------------------------------------------------------------------------------
+Section 2 - Leaderboard
+--------------------------------------------------------------------------------
+Average points per round:
+Team name (P#):  Score      with strategy name
+E3        (P5):       -100 points with Collude but retaliate                   
+E3        (P7):       -100 points with Collude but retaliate                   
+E3        (P6):       -101 points with Collude but retaliate                   
+E3        (P8):       -101 points with Collude but retaliate                   
+E3        (P9):       -101 points with Collude but retaliate                   
+E2        (P0):       -149 points with Alternate                               
+E2        (P1):       -149 points with Alternate                               
+E2        (P3):       -149 points with Alternate                               
+E2        (P4):       -149 points with Alternate                               
+E2        (P2):       -150 points with Alternate                               
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+example2--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E2'
+strategy_name = 'Alternate'
+strategy_description = 'Collude, then alternate.'
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    # This player colludes on even numbered rounds (first round is round #0).
+    if len(my_history)%2 == 0:
+        return 'c'
+    else:
+        return 'b'
+    --------------------------------------------------------------------------------
+example2--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E2'
+strategy_name = 'Alternate'
+strategy_description = 'Collude, then alternate.'
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    # This player colludes on even numbered rounds (first round is round #0).
+    if len(my_history)%2 == 0:
+        return 'c'
+    else:
+        return 'b'
+    --------------------------------------------------------------------------------
+example2--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E2'
+strategy_name = 'Alternate'
+strategy_description = 'Collude, then alternate.'
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    # This player colludes on even numbered rounds (first round is round #0).
+    if len(my_history)%2 == 0:
+        return 'c'
+    else:
+        return 'b'
+    --------------------------------------------------------------------------------
+example2--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E2'
+strategy_name = 'Alternate'
+strategy_description = 'Collude, then alternate.'
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    # This player colludes on even numbered rounds (first round is round #0).
+    if len(my_history)%2 == 0:
+        return 'c'
+    else:
+        return 'b'
+    --------------------------------------------------------------------------------
+example2--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E2'
+strategy_name = 'Alternate'
+strategy_description = 'Collude, then alternate.'
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    # This player colludes on even numbered rounds (first round is round #0).
+    if len(my_history)%2 == 0:
+        return 'c'
+    else:
+        return 'b'
+    --------------------------------------------------------------------------------
+example3--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E3'
+strategy_name = 'Collude but retaliate'
+strategy_description = '''\
+Collude first round. Collude, except in a round after getting 
+a severe punishment.'''
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    if len(my_history)==0: # It's the first round; collude.
+        return 'c'
+    elif my_history[-1]=='c' and their_history[-1]=='b':
+        return 'b' # Betray if they were severely punished last time,
+    else:
+        return 'c' # otherwise collude.--------------------------------------------------------------------------------
+example3--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E3'
+strategy_name = 'Collude but retaliate'
+strategy_description = '''\
+Collude first round. Collude, except in a round after getting 
+a severe punishment.'''
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    if len(my_history)==0: # It's the first round; collude.
+        return 'c'
+    elif my_history[-1]=='c' and their_history[-1]=='b':
+        return 'b' # Betray if they were severely punished last time,
+    else:
+        return 'c' # otherwise collude.--------------------------------------------------------------------------------
+example3--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E3'
+strategy_name = 'Collude but retaliate'
+strategy_description = '''\
+Collude first round. Collude, except in a round after getting 
+a severe punishment.'''
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    if len(my_history)==0: # It's the first round; collude.
+        return 'c'
+    elif my_history[-1]=='c' and their_history[-1]=='b':
+        return 'b' # Betray if they were severely punished last time,
+    else:
+        return 'c' # otherwise collude.--------------------------------------------------------------------------------
+example3--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E3'
+strategy_name = 'Collude but retaliate'
+strategy_description = '''\
+Collude first round. Collude, except in a round after getting 
+a severe punishment.'''
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    if len(my_history)==0: # It's the first round; collude.
+        return 'c'
+    elif my_history[-1]=='c' and their_history[-1]=='b':
+        return 'b' # Betray if they were severely punished last time,
+    else:
+        return 'c' # otherwise collude.--------------------------------------------------------------------------------
+example3--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'E3'
+strategy_name = 'Collude but retaliate'
+strategy_description = '''\
+Collude first round. Collude, except in a round after getting 
+a severe punishment.'''
+    
+def move(my_history, their_history, my_score, their_score):
+    '''Make my move based on the history with this player.
+    
+    history: a string with one letter (c or b) per round that has been played with this opponent.
+    their_history: a string of the same length as history, possibly empty. 
+    The first round between these two players is my_history[0] and their_history[0]
+    The most recent round is my_history[-1] and their_history[-1]
+    
+    Returns 'c' or 'b' for collude or betray.
+    '''
+    if len(my_history)==0: # It's the first round; collude.
+        return 'c'
+    elif my_history[-1]=='c' and their_history[-1]=='b':
+        return 'b' # Betray if they were severely punished last time,
+    else:
+        return 'c' # otherwise collude.--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E2
+--------------------------------------------------------------------------------
+-124 pt/round: E2(P0) "Alternate"
+-124 pt/round: E2(P1) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P0) "Alternate"
+-125 pt/round: E2(P2) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCb
+CbCbCbCbCbCb
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P0) "Alternate"
+-125 pt/round: E2(P3) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P0) "Alternate"
+-125 pt/round: E2(P4) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P0) "Alternate"
+-199 pt/round: E3(P5) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBc
+BcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-196 pt/round: E2(P0) "Alternate"
+-201 pt/round: E3(P6) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-196 pt/round: E2(P0) "Alternate"
+-201 pt/round: E3(P7) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-197 pt/round: E2(P0) "Alternate"
+-201 pt/round: E3(P8) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-196 pt/round: E2(P0) "Alternate"
+-201 pt/round: E3(P9) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E2
+--------------------------------------------------------------------------------
+-124 pt/round: E2(P1) "Alternate"
+-124 pt/round: E2(P0) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P1) "Alternate"
+-125 pt/round: E2(P2) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P1) "Alternate"
+-125 pt/round: E2(P3) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P1) "Alternate"
+-125 pt/round: E2(P4) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbC
+CbC
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P1) "Alternate"
+-199 pt/round: E3(P5) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-197 pt/round: E2(P1) "Alternate"
+-201 pt/round: E3(P6) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P1) "Alternate"
+-199 pt/round: E3(P7) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-197 pt/round: E2(P1) "Alternate"
+-201 pt/round: E3(P8) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P1) "Alternate"
+-199 pt/round: E3(P9) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E2
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P2) "Alternate"
+-125 pt/round: E2(P0) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCb
+CbCbCbCbCbCb
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P2) "Alternate"
+-125 pt/round: E2(P1) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P2) "Alternate"
+-125 pt/round: E2(P3) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P2) "Alternate"
+-125 pt/round: E2(P4) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P2) "Alternate"
+-199 pt/round: E3(P5) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P2) "Alternate"
+-199 pt/round: E3(P6) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P2) "Alternate"
+-199 pt/round: E3(P7) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-197 pt/round: E2(P2) "Alternate"
+-201 pt/round: E3(P8) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-197 pt/round: E2(P2) "Alternate"
+-201 pt/round: E3(P9) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E2
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P3) "Alternate"
+-125 pt/round: E2(P0) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P3) "Alternate"
+-125 pt/round: E2(P1) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P3) "Alternate"
+-125 pt/round: E2(P2) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P3) "Alternate"
+-125 pt/round: E2(P4) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+Cb
+Cb
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P3) "Alternate"
+-199 pt/round: E3(P5) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-196 pt/round: E2(P3) "Alternate"
+-201 pt/round: E3(P6) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P3) "Alternate"
+-199 pt/round: E3(P7) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-198 pt/round: E2(P3) "Alternate"
+-201 pt/round: E3(P8) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-198 pt/round: E2(P3) "Alternate"
+-201 pt/round: E3(P9) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E2
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P4) "Alternate"
+-125 pt/round: E2(P0) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P4) "Alternate"
+-125 pt/round: E2(P1) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbC
+CbC
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P4) "Alternate"
+-125 pt/round: E2(P2) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbC
+
+--------------------------------------------------------------------------------
+-125 pt/round: E2(P4) "Alternate"
+-125 pt/round: E2(P3) "Alternate"
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+CbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCbCb
+
+Cb
+Cb
+
+--------------------------------------------------------------------------------
+-196 pt/round: E2(P4) "Alternate"
+-201 pt/round: E3(P5) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P4) "Alternate"
+-199 pt/round: E3(P6) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-197 pt/round: E2(P4) "Alternate"
+-201 pt/round: E3(P7) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E2(P4) "Alternate"
+-199 pt/round: E3(P8) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-198 pt/round: E2(P4) "Alternate"
+-201 pt/round: E3(P9) "Collude but retaliate"
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E3
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P5) "Collude but retaliate"
+-199 pt/round: E2(P0) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcB
+cBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P5) "Collude but retaliate"
+-199 pt/round: E2(P1) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P5) "Collude but retaliate"
+-199 pt/round: E2(P2) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P5) "Collude but retaliate"
+-199 pt/round: E2(P3) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P5) "Collude but retaliate"
+-196 pt/round: E2(P4) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P5) "Collude but retaliate"
+0 pt/round: E3(P6) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P5) "Collude but retaliate"
+0 pt/round: E3(P7) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P5) "Collude but retaliate"
+0 pt/round: E3(P8) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P5) "Collude but retaliate"
+0 pt/round: E3(P9) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCC
+CCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E3
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P6) "Collude but retaliate"
+-196 pt/round: E2(P0) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P6) "Collude but retaliate"
+-197 pt/round: E2(P1) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P6) "Collude but retaliate"
+-199 pt/round: E2(P2) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P6) "Collude but retaliate"
+-196 pt/round: E2(P3) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P6) "Collude but retaliate"
+-199 pt/round: E2(P4) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P6) "Collude but retaliate"
+0 pt/round: E3(P5) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P6) "Collude but retaliate"
+0 pt/round: E3(P7) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P6) "Collude but retaliate"
+0 pt/round: E3(P8) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P6) "Collude but retaliate"
+0 pt/round: E3(P9) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E3
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P7) "Collude but retaliate"
+-196 pt/round: E2(P0) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P7) "Collude but retaliate"
+-199 pt/round: E2(P1) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P7) "Collude but retaliate"
+-199 pt/round: E2(P2) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P7) "Collude but retaliate"
+-199 pt/round: E2(P3) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P7) "Collude but retaliate"
+-197 pt/round: E2(P4) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P7) "Collude but retaliate"
+0 pt/round: E3(P5) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P7) "Collude but retaliate"
+0 pt/round: E3(P6) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P7) "Collude but retaliate"
+0 pt/round: E3(P8) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P7) "Collude but retaliate"
+0 pt/round: E3(P9) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E3
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P8) "Collude but retaliate"
+-197 pt/round: E2(P0) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P8) "Collude but retaliate"
+-197 pt/round: E2(P1) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P8) "Collude but retaliate"
+-197 pt/round: E2(P2) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P8) "Collude but retaliate"
+-198 pt/round: E2(P3) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P8) "Collude but retaliate"
+-199 pt/round: E2(P4) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P8) "Collude but retaliate"
+0 pt/round: E3(P5) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P8) "Collude but retaliate"
+0 pt/round: E3(P6) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P8) "Collude but retaliate"
+0 pt/round: E3(P7) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P8) "Collude but retaliate"
+0 pt/round: E3(P9) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCC
+CCC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team E3
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P9) "Collude but retaliate"
+-196 pt/round: E2(P0) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-199 pt/round: E3(P9) "Collude but retaliate"
+-199 pt/round: E2(P1) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P9) "Collude but retaliate"
+-197 pt/round: E2(P2) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P9) "Collude but retaliate"
+-198 pt/round: E2(P3) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-201 pt/round: E3(P9) "Collude but retaliate"
+-198 pt/round: E2(P4) "Alternate"
+CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P9) "Collude but retaliate"
+0 pt/round: E3(P5) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCC
+CCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P9) "Collude but retaliate"
+0 pt/round: E3(P6) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P9) "Collude but retaliate"
+0 pt/round: E3(P7) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: E3(P9) "Collude but retaliate"
+0 pt/round: E3(P8) "Collude but retaliate"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCC
+CCC
+
+--------------------------------------------------------------------------------
